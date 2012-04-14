@@ -50,7 +50,7 @@ package() {
   cd "$srcdir/$_gitname-build"
   install -D -m644 apkanalyser/target/apkanalyser-*-exec.jar ${pkgdir}/usr/bin/apkanalyser.jar
   install -D -m755 ${srcdir}/apkanalyser.sh ${pkgdir}/usr/bin/apkanalyser
-  install -D -m644 ${srcdir}/apkanalyser.desktop ${pkgdir}/usr/share/applications/
+  install -D -m644 ${srcdir}/apkanalyser.desktop ${pkgdir}/usr/share/applications/apkanalyser.desktop
 }
 
 # vim:set ts=2 sw=2 et:
