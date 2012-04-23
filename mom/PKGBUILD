@@ -7,6 +7,7 @@ pkgdesc="Management interface software for products offered by OVH"
 url="https://www.ovh.com/fr/support/outils/mom.xml"
 license=('custom' 'LGPL2.1')
 arch=('i686' 'x86_64')
+changelog=ChangeLog
 depends=('krb5' 'fontconfig' 'libsm' 'libxext' 'libxrender' 'gcc-libs' 'xdg-utils')
 source=(ftp://ftp.ovh.net/MoM/MoM-${pkgver}.tar.gz mom.desktop mom.xpm mom_dotfile.patch)
 md5sums=('fd3c37e376824dee5c5875a167b37524'
