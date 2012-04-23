@@ -1,4 +1,35 @@
 ================================================================================
+4.1.14
+================================================================================
+
+VPS:
+- Add licence management for plesk, cpanel & small business panel
+- Add Replenish prepaid account for XPS services
+- Changed the dedicated backup ftp wizard : mail sended only on nic email address
+- Removed the offer type combo in the domain deposit wizard 
+- Fixed bug in telephony for international numbers
+
+================================================================================
+4.1.13
+================================================================================
+
+VPS:
+- Add configuration of Reverse DNS
+- Adding the domain configuration to the secondary DNS
+
+
+SMS:
+- Fix the display of the most recently sent SMS
+- Notification of the message "STOP: 36111" displayed at the end of SMS and update 
+the number of characters left.
+
+Phone:
+- Fix management of international telephone numbers.
+
+Mac:
+- Fix the problem that prevent MoM to run on OS X Leopard
+
+================================================================================
 4.1.12.2011102400
 ================================================================================
 
