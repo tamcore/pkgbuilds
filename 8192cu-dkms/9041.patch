@@ -1,0 +1,10 @@
+--- a/os_dep/linux/usb_intf.c	2012-04-03 18:42:55.000000000 +0200
++++ b/os_dep/linux/usb_intf.c	2012-05-08 18:00:58.643455812 +0200
+@@ -77,6 +77,7 @@
+ 	{USB_DEVICE(0x0BDA, 0x8191)},//Default ID
+ 
+ 	/****** 8188CUS ********/
++	{USB_DEVICE(0x0846, 0x9041)}, //NetGear, Inc. WNA1000M 802.11bgn
+ 	{USB_DEVICE(USB_VENDER_ID_REALTEK, 0x8176)},//8188cu 1*1 dongole
+ 	{USB_DEVICE(USB_VENDER_ID_REALTEK, 0x8170)},//8188CE-VAU USB minCard
+ 	{USB_DEVICE(USB_VENDER_ID_REALTEK, 0x817E)},//8188CE-VAU USB minCard
