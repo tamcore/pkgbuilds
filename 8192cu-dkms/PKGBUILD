@@ -33,5 +33,10 @@ package() {
 
 	sed -i "s/^ver=.*/ver=${_pkgver}/" ${startdir}/8192cu-dkms.install
 	sed -i "s/^PACKAGE_VERSION=.*/PACKAGE_VERSION=${_pkgver}/" ${pkgdir}/usr/src/${_pkgname}-${_pkgver}/dkms.conf
-	sed -i "s/CARCH/${CARCH}/" ${pkgdir}/usr/src/${_pkgname}-${_pkgver}/dkms.conf
+
+	if [ "${CARCH}" == "arm" ]; then
+		sed -i "s/CARCH/${CARCH}/" ${pkgdir}/usr/src/${_pkgname}-${_pkgver}/dkms.conf
+	else
+		sed -i "s/ARCH=CARCH//" ${pkgdir}/usr/src/${_pkgname}-${_pkgver}/dkms.conf
+	fi
 }
