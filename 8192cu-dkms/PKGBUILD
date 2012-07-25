@@ -5,7 +5,7 @@ pkgdesc='Drivers for realtek RTL8188CUS (8188C, 8192C) chipset wireless cards'
 arch=('i686' 'x86_64')
 url='http://218.210.127.131/downloads/downloadsView.aspx?Langid=1&PNid=48&PFid=48&Level=5&Conn=4&DownTypeID=3&GetDown=false&Downloads=true#RTL8192CU'
 license=('GPL2')
-depends=('dkms')
+depends=('dkms' 'linux' 'linux-headers')
 provides=('8192cu' 'rt8192cu')
 conflicts=('8192cu' 'rt8192cu')
 install='8192cu-dkms.install'
