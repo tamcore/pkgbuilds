@@ -1,4 +1,4 @@
-#!/usr/bin/python2
+#!/usr/bin/python
 
 '''
     Copyright 2009, The Android Open Source Project
@@ -21,7 +21,7 @@
 # piping detection and popen() added by other android team members
 
 
-import os, sys, re, StringIO
+import os, sys, re, io
 import fcntl, termios, struct
 
 # unpack the current terminal width/height
@@ -47,7 +47,7 @@ def format(fg=None, bg=None, bright=False, bold=False, dim=False, reset=False):
 
 def indent_wrap(message, indent=0, width=80):
     wrap_area = width - indent
-    messagebuf = StringIO.StringIO()
+    messagebuf = io.StringIO()
     current = 0
     while current < len(message):
         next = min(current + wrap_area, len(message))
@@ -114,7 +114,7 @@ while True:
     match = retag.match(line)
     if not match is None:
         tagtype, tag, owner, message = match.groups()
-        linebuf = StringIO.StringIO()
+        linebuf = io.StringIO()
 
         # center process info
         if PROCESS_WIDTH > 0:
@@ -142,5 +142,5 @@ while True:
         linebuf.write(message)
         line = linebuf.getvalue()
 
-    print line
+    print(line)
     if len(line) == 0: break
