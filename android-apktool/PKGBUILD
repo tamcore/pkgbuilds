@@ -9,6 +9,7 @@ license=('Apache 2.0')
 depends=('java-runtime' 'android-sdk-platform-tools')
 source=(http://miui.connortumbleson.com/other/apktool/apktool_${pkgver}.jar
 		http://android-apktool.googlecode.com/files/apktool-install-linux-r04-brut1.tar.bz2)
+noextract=(apktool_${pkgver}.jar)
 md5sums=('13a19b712c7967f1b67638f75d8b9f85'
          'f7fc0f06ebee9a975e5296296a396534')
 
