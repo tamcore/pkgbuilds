@@ -7,10 +7,11 @@ license=('unknown')
 depends=('keepass')
 arch=(i686 x86_64)
 url="http://github.com/pfn/keepasshttp"
-source=(https://github.com/pfn/keepasshttp/raw/5d4122ef386fcda9e1009a27f18dee53ad498ee9/KeePassHttp/KeePassHttp.dll
-		https://github.com/pfn/keepasshttp/raw/5d4122ef386fcda9e1009a27f18dee53ad498ee9/KeePassHttp/Newtonsoft.Json.dll)
+_commit="5d4122ef386fcda9e1009a27f18dee53ad498ee9"
+source=(KeePassHttp.dll::https://github.com/pfn/keepasshttp/raw/${_commit}/KeePassHttp/KeePassHttp.dll
+        Newtonsoft.Json.dll::https://github.com/pfn/keepasshttp/raw/${_commit}/KeePassHttp/Newtonsoft.Json.dll)
 md5sums=('25383e22f9fb211680f40a902c3c5eca'
-		'6dc7988bf02bdccb02c03ccd5cfc856e')
+         '6dc7988bf02bdccb02c03ccd5cfc856e')
 
 package(){
    cd $srcdir
