@@ -13,6 +13,7 @@ source=(catacomb-snatch.jar::http://ci.catacombsnatch.net/job/Catacomb-Snatch/${
         catacomb-snatch.desktop
         catacomb-snatch
         LICENSE::https://raw.github.com/Maescool/Catacomb-Snatch/develop/LICENSE)
+noextract=(catacomb-snatch.jar)
 md5sums=('ecf29c4d44a8593b543170d21dd6ef56'
          'a1654d780d1a5d838b30cffc41b48450'
          '040847ddc7698129b98d302075adc8f9'
