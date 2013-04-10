@@ -13,5 +13,5 @@ source=("10-autofs")
 sha256sums=('699b3b9ade7ce9fececea10ebf6e0cd4dab0c3c5f54cf0264437adb9482166b7')
 
 package() {
-  install -Dm700 $srcdir/10-autofs $pkgdir/etc/NetworkManager/dispatcher.d/10-autofs
+  install -Dm700 "${srcdir}"/10-autofs "${pkgdir}"/etc/NetworkManager/dispatcher.d/10-autofs
 }

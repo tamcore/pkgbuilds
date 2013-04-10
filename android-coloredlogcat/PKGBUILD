@@ -11,6 +11,6 @@ source=('coloredlogcat.py')
 md5sums=('d034d74cf80d54cbad7b451f541de462')
 
 package() {
-  mkdir -p $pkgdir/usr/bin
-  install -m 0755 $srcdir/coloredlogcat.py $pkgdir/usr/bin
+  mkdir -p "${pkgdir}"/usr/bin
+  install -m 0755 "${srcdir}"/coloredlogcat.py "${pkgdir}"/usr/bin
 }

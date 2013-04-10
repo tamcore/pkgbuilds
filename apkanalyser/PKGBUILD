@@ -20,7 +20,6 @@ _gitname=ApkAnalyser
 
 
 build() {
-  cd "$srcdir"
   msg "Connecting to GIT server...."
 
   if [[ -d "$_gitname" ]]; then
@@ -33,9 +32,9 @@ build() {
   msg "GIT checkout done or server timeout"
   msg "Starting build..."
 
-  rm -rf "$srcdir/$_gitname-build"
-  git clone "$srcdir/$_gitname" "$srcdir/$_gitname-build"
-  cd "$srcdir/$_gitname-build"
+  rm -rf "${srcdir}"/$_gitname-build
+  git clone "${srcdir}"/$_gitname" "${srcdir}"/$_gitname-build
+  cd "${srcdir}"/$_gitname-build
 
   # Build smali project
   cd smali
@@ -54,7 +53,7 @@ build() {
 }
 
 package() {
-  cd "$srcdir/$_gitname-build"
+  cd "${srcdir}"/$_gitname-build
   install -D -m644 apkanalyser/target/apkanalyser-*-exec.jar ${pkgdir}/usr/bin/apkanalyser.jar
   install -D -m755 ${srcdir}/apkanalyser.sh ${pkgdir}/usr/bin/apkanalyser
   install -D -m644 ${srcdir}/apkanalyser.desktop ${pkgdir}/usr/share/applications/apkanalyser.desktop

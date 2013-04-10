@@ -17,7 +17,6 @@ md5sums=('0d4f163c74c2cca28801f1f5af71c237'
          '7c29d339ae9d842883bab1a2c11d25c5')
 
 package() {
-    cd ${srcdir}
-    mkdir -p ${pkgdir}/usr/share/keepass
-    install -m644 {KeePassHttp.{dll,plgx},Newtonsoft.Json.dll} ${pkgdir}/usr/share/keepass
+    mkdir -p "${pkgdir}"/usr/share/keepass
+    install -m644 {KeePassHttp.{dll,plgx},Newtonsoft.Json.dll} "${pkgdir}"/usr/share/keepass
 }

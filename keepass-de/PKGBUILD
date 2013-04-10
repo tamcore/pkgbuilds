@@ -12,7 +12,6 @@ arch=(any)
 md5sums=('607d846e5a333a29d11e279d0c25e9e9')
 
 package(){
-   cd $srcdir
-   mkdir -p $pkgdir/usr/share/keepass
-   install -m644 German.lngx $pkgdir/usr/share/keepass
+   mkdir -p "${pkgdir}"/usr/share/keepass
+   install -m644 German.lngx "${pkgdir}"/usr/share/keepass
 }

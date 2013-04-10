@@ -21,9 +21,9 @@ md5sums=('ecf29c4d44a8593b543170d21dd6ef56'
          '2abf3da47075351544e764f3b4c89317')
 
 package() {
-    install -D -m644 catacomb-snatch.png ${pkgdir}/usr/share/icons/catacomb-snatch.png
-    install -D -m644 catacomb-snatch.jar ${pkgdir}/usr/bin/catacomb-snatch.jar
-    install -D -m644 catacomb-snatch.desktop ${pkgdir}/usr/share/applications/catacomb-snatch.desktop
-    install -D -m755 catacomb-snatch ${pkgdir}/usr/bin/catacomb-snatch    
-    install -D -m644 LICENSE ${pkgdir}/usr/share/licenses/${pkgname}/LICENSE
+    install -D -m644 catacomb-snatch.png "${pkgdir}"/usr/share/icons/catacomb-snatch.png
+    install -D -m644 catacomb-snatch.jar "${pkgdir}"/usr/bin/catacomb-snatch.jar
+    install -D -m644 catacomb-snatch.desktop "${pkgdir}"/usr/share/applications/catacomb-snatch.desktop
+    install -D -m755 catacomb-snatch "${pkgdir}"/usr/bin/catacomb-snatch    
+    install -D -m644 LICENSE "${pkgdir}"/usr/share/licenses/${pkgname}/LICENSE
 }

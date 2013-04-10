@@ -16,7 +16,7 @@ source=("https://github.com/jasmineaura/mate-globalmenu/archive/master.zip")
 md5sums=('8b7c7f665810cdc81281213e573fac4d')
 
 build() {
-  cd ${srcdir}/${pkgname}-master
+  cd "${srcdir}"/${pkgname}-master
 
   autoconf
   sh ./configure --prefix=/usr --sysconfdir=/etc --libexecdir=/usr/lib
@@ -25,10 +25,10 @@ build() {
 }
 
 package(){
-  cd ${srcdir}/${pkgname}-master
-  make DESTDIR=${pkgdir} install || return 1
+  cd "${srcdir}"/${pkgname}-master
+  make DESTDIR="${pkgdir}" install || return 1
 
-  install -d -m755 "${pkgdir}/usr/share/mateconf/schemas"
-  mateconf-merge-schema "${pkgdir}/usr/share/mateconf/schemas/${pkgname}.schemas" ${pkgdir}/etc/mateconf/schemas/*.schemas || return 1
-  rm -f ${pkgdir}/etc/mateconf/schemas/*.schemas
+  install -d -m755 "${pkgdir}"/usr/share/mateconf/schemas
+  mateconf-merge-schema "${pkgdir}"/usr/share/mateconf/schemas/${pkgname}.schemas "${pkgdir}"/etc/mateconf/schemas/*.schemas || return 1
+  rm -f "${pkgdir}"/etc/mateconf/schemas/*.schemas
 }
