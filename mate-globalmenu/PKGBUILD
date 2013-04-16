@@ -21,14 +21,14 @@ build() {
   autoconf
   sh ./configure --prefix=/usr --sysconfdir=/etc --libexecdir=/usr/lib
 
-  make || return 1
+  make 
 }
 
 package(){
   cd "${srcdir}"/${pkgname}-master
-  make DESTDIR="${pkgdir}" install || return 1
+  make DESTDIR="${pkgdir}" install 
 
   install -d -m755 "${pkgdir}"/usr/share/mateconf/schemas
-  mateconf-merge-schema "${pkgdir}"/usr/share/mateconf/schemas/${pkgname}.schemas "${pkgdir}"/etc/mateconf/schemas/*.schemas || return 1
+  mateconf-merge-schema "${pkgdir}"/usr/share/mateconf/schemas/${pkgname}.schemas "${pkgdir}"/etc/mateconf/schemas/*.schemas 
   rm -f "${pkgdir}"/etc/mateconf/schemas/*.schemas
 }

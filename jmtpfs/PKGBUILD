@@ -12,12 +12,11 @@ md5sums=('e6bcade86da701a5d2b6f6bbc9b24e39')
 
 build() {
     cd "${srcdir}/${pkgname}-${pkgver}"
-    sed -i '0,/#include/s/#include/#include <unistd.h>\n#include/' src/jmtpfs.cpp
-    ./configure CXXFLAGS=-lpthread --prefix=${pkgdir}/usr/
+    ./configure CXXFLAGS=-lpthread --prefix=/usr
     make
 }
 
 package() {
     cd "${srcdir}/${pkgname}-${pkgver}"
-    make install
+    make DESTDIR="${pkgdir}" install
 }
