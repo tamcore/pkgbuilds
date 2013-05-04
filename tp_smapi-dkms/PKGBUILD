@@ -1,8 +1,8 @@
 pkgname=tp_smapi-dkms
 pkgver=0.41
-pkgrel=6
+pkgrel=7
 pkgdesc="DKMS controlled modules for ThinkPad's SMAPI functionality"
-arch=(i686 x86_64)
+arch=(any)
 url="http://www.thinkwiki.org/wiki/Tp_smapi"
 license=('GPL')
 depends=('dkms')
