@@ -11,7 +11,8 @@ pkgdesc="Run Windows Programs on Linux"
 arch=('i686' 'x86_64')
 url="http://www.codeweavers.com"
 license=('custom')
-makedepends=('binutils' 'tar')
+changelog=CHANGELOG
+makedepends=('binutils' 'tar' 'gzip')
 install=${pkgname}.install
 replaces=('crossover-games' 'crossover-pro' 'crossover-standard')
 depends=('python' 'alsa-lib' 'libsm' 'libxext' 'libxrandr' 'libice' 'pygtk'
@@ -93,5 +94,7 @@ package() {
 
 	# Fix Auto update error
 	install -m 644 -D "$srcdir/cxoffice.conf" "$pkgdir/opt/cxoffice/etc/cxoffice.conf"
-}
 
+	# Changelog for pacman -Qc
+	zcat "${pkgdir}/opt/cxoffice/doc/changelog.gz" > "${startdir}/CHANGELOG"
+}
