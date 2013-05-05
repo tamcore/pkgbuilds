@@ -17,5 +17,6 @@ pre_remove() {
     echo "Removing menus and file associations, please wait..."
     /opt/cxoffice/bin/cxmenu --crossover --uninstall
     /opt/cxoffice/bin/cxassoc --crossover --uninstall
+    rm -f /usr/local/share/icons/hicolor/*x*/apps/cxmenu-*.png
     echo "Done!"
 }
