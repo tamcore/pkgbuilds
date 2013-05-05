@@ -1,6 +1,6 @@
 pkgname=tp_smapi-dkms
 pkgver=0.41
-pkgrel=7
+pkgrel=8
 pkgdesc="DKMS controlled modules for ThinkPad's SMAPI functionality"
 arch=(any)
 url="http://www.thinkwiki.org/wiki/Tp_smapi"
@@ -10,10 +10,11 @@ conflicts=('tp_smapi')
 provides=("tp_smapi=${pkgver%.*}")
 options=(!strip)
 install='tp_smapi-dkms.install'
-source=('https://github.com/x539/tp_smapi/archive/master.tar.gz' 'dkms.conf' 'kbase.patch')
-md5sums=('b1b42fdd181d5cb3306eacbedda7845f'
-         '348a6bda27ecd69112417fbda8d7a2ee'
-         '933c95f6a6ff187d7dd0bcf413b30b8e')
+source=('https://github.com/evgeni/tp_smapi/archive/master.tar.gz' 'kbase.patch' 'dkms.conf')
+
+md5sums=('11c6f9d0c5d7fbd73d3a77b61c7c3a9b'
+         'de4e1757a3e0e63ab85303c2dc58b863'
+         '348a6bda27ecd69112417fbda8d7a2ee')
 
 package() 
 {
@@ -23,5 +24,4 @@ package()
     mkdir -p "${pkgdir}"/usr/src/${pkgname}-${pkgver}
     cp -a tp_smapi-master/{*.{h,c},Makefile} "${pkgdir}"/usr/src/${pkgname}-${pkgver}
     cp dkms.conf "${pkgdir}"/usr/src/${pkgname}-${pkgver}
-    sed -i 's/KVER/KERNELRELEASE/g' "${pkgdir}"/usr/src/${pkgname}-${pkgver}/Makefile
 }
