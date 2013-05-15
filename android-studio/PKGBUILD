@@ -13,6 +13,13 @@ md5sums=('62b9ce75e4b74b7c1236ea2f1f99da34')
 
 [ $CARCH = "x86_64" ] && depends=('python' 'lib32-fontconfig' 'lib32-mesa' 'lib32-libxrender' 'android-sdk-platform-tools' 'android-platform-17')
 
+prepare() {
+    cd "${srcdir}/${pkgname}"
+
+    # remove pause after open jdk warning
+    sed -i 's/read IGNORE//' bin/studio.sh
+}
+
 package() {
     cd "${srcdir}/${pkgname}"
     mkdir -p "${pkgdir}/opt/${pkgname}/"{bin,lib}
