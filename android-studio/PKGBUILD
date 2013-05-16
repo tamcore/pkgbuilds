@@ -8,9 +8,9 @@ arch=(i686 x86_64)
 url="http://developer.android.com/sdk/installing/studio.html"
 license=('unknown')
 depends=('python' 'fontconfig' 'mesa' 'libxrender' 'android-sdk')
-optdepends=('android-sdk-platform-tools'
-            'android-platform-17')
+optdepends=('android-sdk-platform-tools')
 options=('!strip')
+install=${pkgname}.install
 source=(http://dl.google.com/android/studio/android-studio-bundle-130.677228-linux.tgz
         ${pkgname}.desktop
         ${pkgname}.png)

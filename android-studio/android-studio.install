@@ -1,0 +1,7 @@
+post_install() {
+    echo "Please make sure that you have Android SDK Platform-tools installed."
+    echo
+    echo "There are two ways to install:"
+    echo "1.) Package android-sdk-platform-tools from AUR"
+    echo "or 2.) via Android SDK Manager"
+}
