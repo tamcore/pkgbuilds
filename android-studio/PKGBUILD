@@ -2,7 +2,8 @@
 
 pkgname=android-studio
 pkgver=0.1
-pkgrel=5
+pkgrel=6
+_build=130.677228
 pkgdesc="A new Android development environment based on IntelliJ IDEA."
 arch=(i686 x86_64)
 url="http://developer.android.com/sdk/installing/studio.html"
@@ -12,7 +13,7 @@ makedepends=('unzip')
 optdepends=('android-sdk-platform-tools' 'android-sdk-build-tools')
 options=('!strip')
 install=${pkgname}.install
-source=(http://dl.google.com/android/studio/android-studio-bundle-130.677228-linux.tgz
+source=(http://dl.google.com/android/studio/android-studio-bundle-${_build}-linux.tgz
         ${pkgname}.desktop)
 md5sums=('62b9ce75e4b74b7c1236ea2f1f99da34'
          '8a429621df3ffc4e5aa4097fad757656')
@@ -43,6 +44,11 @@ package() {
     cp -a bin lib plugins "${pkgdir}/opt/${pkgname}"
     chmod -R 755 "${pkgdir}/opt/${pkgname}"
     ln -s /opt/android-studio/bin/studio.sh "${pkgdir}/opt/${pkgname}/bin/android-studio"
+
+    # extras for sdk
+    mkdir -p "${pkgdir}/opt/android-sdk"
+    cp -a sdk/extras "${pkgdir}/opt/android-sdk"
+    chmod -R 755 "${pkgdir}/opt/android-sdk/extras"
 
     # starter stuff
     install -Dm655 artwork/icon_AS_128.png "${pkgdir}/usr/share/pixmaps/${pkgname}.png"
