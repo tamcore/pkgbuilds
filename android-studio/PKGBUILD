@@ -24,23 +24,27 @@ prepare() {
 
     # remove pause after open jdk warning
     sed -i 's/read IGNORE//' bin/studio.sh
+
+    # extract the application icon
+    unzip -o lib/resources.jar artwork/icon_AS_128.png
 }
 
 package() {
     cd "${srcdir}/${pkgname}"
-    mkdir -p "${pkgdir}/opt/${pkgname}" "${pkgdir}/etc/profile.d"
 
+    # profile.d stuff
+    mkdir -p "${pkgdir}/etc/profile.d"
     echo 'export PATH=$PATH:/opt/android-studio/bin' > "${pkgdir}/etc/profile.d/${pkgname}.sh"
     echo 'setenv PATH ${PATH}:/opt/android-studio/bin' > "${pkgdir}/etc/profile.d/${pkgname}.csh"
+    chmod 755 "${pkgdir}/etc/profile.d/"*
 
-    cp -Rf bin lib plugins "${pkgdir}/opt/${pkgname}/"
-
-    chmod -R 755 "${pkgdir}/opt/${pkgname}/"{bin,lib,plugins} "${pkgdir}/etc/profile.d"
-    chmod +rx "${pkgdir}/opt/${pkgname}/bin/"{fsnotifier*,inspect.sh,studio.sh}
-
+    # application stuff
+    mkdir -p "${pkgdir}/opt/${pkgname}"
+    cp -a bin lib plugins "${pkgdir}/opt/${pkgname}"
+    chmod -R 755 "${pkgdir}/opt/${pkgname}"
     ln -s /opt/android-studio/bin/studio.sh "${pkgdir}/opt/${pkgname}/bin/android-studio"
 
-    unzip -o lib/resources.jar artwork/icon_AS_128.png
+    # starter stuff
     install -Dm655 artwork/icon_AS_128.png "${pkgdir}/usr/share/pixmaps/${pkgname}.png"
     install -Dm655 "${srcdir}/${pkgname}.desktop" "${pkgdir}/usr/share/applications/${pkgname}.desktop"
 }
