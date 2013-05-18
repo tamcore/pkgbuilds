@@ -33,12 +33,16 @@ conflicts=('coherence-svn')
 source=(http://coherence.beebits.net/download/Coherence-${pkgver}.tar.gz
        coherence.rc
        coherence.conf
+       coherence.service
+       coherence_pidfile.patch
        samsung.patch
        org.Coherence.service)
 backup=('etc/coherence.conf')
 md5sums=('d7a1b4abf6831c61e37a3b9e2bdc560a'
          'a30fe51a098aa9ca4dcee96779a1e6a0'
          '9a2fd979a83a4f4ceb6fd3564cdeda86'
+         'c43416ac2fb8a8195917a7e23b806c7d'
+         'b12f5f89fe34e48267c6c6e7cab5a4f4'
          '039d4b84c0f0d023d9e9519fba1b101e'
          'ed11837f08988600e5aac0caf8e5221a')
 
@@ -49,6 +53,8 @@ prepare() {
     msg "Patching source with Samsung Patch"
     patch -Np0 < ${srcdir}/samsung.patch
   fi
+
+  patch -p1 < "${srcdir}/coherence_pidfile.patch"
 }
 
 package() {
