@@ -10,7 +10,7 @@ _samsung_patch="n" # patches fsstore backend for compatibility with Samsung TVs
 
 pkgname=coherence
 pkgver=0.6.6.2
-pkgrel=2
+pkgrel=3
 pkgdesc="A DLNA/UPnP MediaServer and MediaRenderer"
 arch=('i686' 'x86_64')
 url="http://coherence.beebits.net/"
