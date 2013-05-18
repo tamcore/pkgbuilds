@@ -31,14 +31,16 @@ optdepends=('ampache: for the Ampache Backend'
 makedepends=('python2-distribute')
 conflicts=('coherence-svn')
 source=(http://coherence.beebits.net/download/Coherence-${pkgver}.tar.gz
-coherence.rc
-coherence.conf
-samsung.patch)
+       coherence.rc
+       coherence.conf
+       samsung.patch
+       org.Coherence.service)
 backup=('etc/coherence.conf')
 md5sums=('d7a1b4abf6831c61e37a3b9e2bdc560a'
          'a30fe51a098aa9ca4dcee96779a1e6a0'
          '9a2fd979a83a4f4ceb6fd3564cdeda86'
-         '039d4b84c0f0d023d9e9519fba1b101e')
+         '039d4b84c0f0d023d9e9519fba1b101e'
+         'ed11837f08988600e5aac0caf8e5221a')
 
 prepare() {
   cd "${srcdir}/Coherence-${pkgver}"
@@ -56,10 +58,7 @@ package() {
 
   #dbus fix
   if [ ${_use_dbus} = "y" ]; then
-    mkdir -p "${pkgdir}/usr/share/dbus-1/services"
-    echo "[D-BUS Service]" > "${pkgdir}/usr/share/dbus-1/services/org.Coherence.service"
-    echo "Name=org.Coherence" >> "${pkgdir}/usr/share/dbus-1/services/org.Coherence.service"
-    echo "Exec=/usr/bin/coherence -o use_dbus:yes -o controlpoint:yes" >> "${pkgdir}/usr/share/dbus-1/services/org.Coherence.service"
+    install -D -m644 "${srcdir}/org.Coherence.service" "${pkgdir}/usr/share/dbus-1/services/org.Coherence.service"
   else
     install -D -m755 "${srcdir}/coherence.conf" "${pkgdir}/etc/coherence.conf"
     install -D -m755 "${srcdir}/coherence.rc" "${pkgdir}/etc/rc.d/coherence"
