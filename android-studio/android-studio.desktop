@@ -2,7 +2,7 @@
 Version=1.0
 Type=Application
 Name=Android Studio
-Exec=/opt/android-studio/bin/android-studio %f
+Exec=/usr/bin/android-studio %f
 Icon=/usr/share/pixmaps/android-studio.png
 Comment=Develop with pleasure!
 Categories=Development;IDE;

@@ -17,7 +17,7 @@ source=(http://dl.google.com/android/studio/android-studio-bundle-${_build}-linu
         ${pkgname}.desktop
         vmoptions.patch)
 md5sums=('6796d66de07c85b2822ca8d501a043c0'
-         '3a89903be95351341c84956a810387be'
+         '850356f8cedad784f1f79e9cfaa38651'
          'be1810573bd3aaadabd90d14a642982c')
 
 [ $CARCH = "x86_64" ] && depends=('python' 'lib32-fontconfig' 'lib32-mesa' 'lib32-libxrender' 'android-sdk')
@@ -39,17 +39,13 @@ prepare() {
 package() {
     cd "${srcdir}/${pkgname}"
 
-    # profile.d stuff
-    mkdir -p "${pkgdir}/etc/profile.d"
-    echo 'export PATH=$PATH:/opt/android-studio/bin' > "${pkgdir}/etc/profile.d/${pkgname}.sh"
-    echo 'setenv PATH ${PATH}:/opt/android-studio/bin' > "${pkgdir}/etc/profile.d/${pkgname}.csh"
-    chmod 755 "${pkgdir}/etc/profile.d/"*
-
     # application stuff
     mkdir -p "${pkgdir}/opt/${pkgname}"
     cp -a bin lib plugins "${pkgdir}/opt/${pkgname}"
     chmod -R 755 "${pkgdir}/opt/${pkgname}"
-    ln -s /opt/android-studio/bin/studio.sh "${pkgdir}/opt/${pkgname}/bin/android-studio"
+
+    mkdir -p "${pkgdir}/usr/bin"
+    ln -s /opt/android-studio/bin/studio.sh "${pkgdir}/usr/bin/android-studio"
 
     # starter stuff
     install -Dm655 artwork/icon_AS_128.png "${pkgdir}/usr/share/pixmaps/${pkgname}.png"
