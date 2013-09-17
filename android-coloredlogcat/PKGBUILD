@@ -8,7 +8,7 @@ url="http://jsharkey.org/blog/2009/04/22/modifying-the-android-logcat-stream-for
 license=('Apache')
 depends=('android-sdk-platform-tools' 'python')
 source=('coloredlogcat.py')
-md5sums=('d034d74cf80d54cbad7b451f541de462')
+sha256sums=('ad7a42b89093f36d96f4f3f57060ccf484e5bd62c6c4238f81953def39c3dd3f')
 
 package() {
   mkdir -p "${pkgdir}"/usr/bin

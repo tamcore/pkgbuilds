@@ -38,13 +38,13 @@ source=(http://coherence.beebits.net/download/Coherence-${pkgver}.tar.gz
        samsung.patch
        org.Coherence.service)
 backup=('etc/coherence.conf')
-md5sums=('d7a1b4abf6831c61e37a3b9e2bdc560a'
-         'a30fe51a098aa9ca4dcee96779a1e6a0'
-         '9a2fd979a83a4f4ceb6fd3564cdeda86'
-         'c43416ac2fb8a8195917a7e23b806c7d'
-         'b12f5f89fe34e48267c6c6e7cab5a4f4'
-         '039d4b84c0f0d023d9e9519fba1b101e'
-         'ed11837f08988600e5aac0caf8e5221a')
+sha256sums=('0b54a6ba88c1ff6274aadb68ff37b8a3961b4c6acf5ded291c5dea936a311ba4'
+            '29619e954d6747b78c7c8b1d15188e9a623e3052040b9f5e814adde17859efd6'
+            '89c1f53dea466f941dc1ee74d62900134c27e840c2a81e3d46b6c8cb0f8ee617'
+            '0dee74b2777ffa60bc912ecb3756d5fbc2ed32c4866d633b1cc9c0edf03ce5ea'
+            'fb11014e27ee5dd4fc70145212e85c926e392e43afe10ebff565db260cfe0464'
+            '4b242a70452e9b394c69e440a620016a4e2c86ffe772ce112094b04d97e2eb0a'
+            '732a74062dfb3f712432a81bd8b7dac2117281f8043a467e23b80834e1252a56')
 
 prepare() {
   cd "${srcdir}/Coherence-${pkgver}"

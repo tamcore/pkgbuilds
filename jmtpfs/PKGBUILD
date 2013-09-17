@@ -8,7 +8,7 @@ url="http://research.jacquette.com/jmtpfs-exchanging-files-between-android-devic
 depends=('fuse' 'file' 'libmtp')
 makedepends=('gcc')
 source=("http://research.jacquette.com/wp-content/uploads/2012/05/jmtpfs-0.4.tar.gz")
-md5sums=('e6bcade86da701a5d2b6f6bbc9b24e39')
+sha256sums=('cc063fca9702f230b386845575fe0aa00aedc6665f2db9f6ac9bf75e2abeb4a6')
 
 build() {
     cd "${srcdir}/${pkgname}-${pkgver}"

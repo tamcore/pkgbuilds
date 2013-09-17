@@ -11,10 +11,9 @@ provides=("tp_smapi=${pkgver%.*}")
 options=(!strip)
 install='tp_smapi-dkms.install'
 source=('https://github.com/evgeni/tp_smapi/archive/master.tar.gz' 'kbase.patch' 'dkms.conf')
-
-md5sums=('11c6f9d0c5d7fbd73d3a77b61c7c3a9b'
-         'de4e1757a3e0e63ab85303c2dc58b863'
-         '348a6bda27ecd69112417fbda8d7a2ee')
+sha256sums=('2a4145173e67aa4dd8d4b8dc4180a965f18c1e8b47c5ade9d24559e8b9baf32b'
+            '70781530f6f76279ac968897bfa4231059d174e21ebd13d1bcb17f07471421d9'
+            'e2d3db8b9bd5c53cba1d702e36814ec56ef52dd37dfe8a03f58deb83c11c8bed')
 
 package() 
 {

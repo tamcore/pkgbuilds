@@ -7,9 +7,9 @@ license=('GPL2')
 depends=("keepass")
 makedepends=('unzip')
 url="http://keepass.info/translations.html"
-source=(http://downloads.sourceforge.net/keepass/KeePass-${pkgver}-German.zip)
+source=(https://downloads.sourceforge.net/keepass/KeePass-${pkgver}-German.zip)
 arch=(any)
-md5sums=('e47a1c26f4a3d7b46f51c3b82fcaa330')
+sha256sums=('e8e08bf3f089b571fb98e61e3bcefb1bcc78aec934617b8fe08ae604d6128a94')
 
 package(){
    mkdir -p "${pkgdir}"/usr/share/keepass

@@ -7,10 +7,10 @@ arch=(i686 x86_64)
 url="http://forum.xda-developers.com/showthread.php?t=1755243"
 license=('Apache 2.0')
 depends=('java-runtime' 'android-sdk-build-tools')
-source=(http://android-apktool.googlecode.com/files/apktool${pkgver}.tar.bz2
-        http://android-apktool.googlecode.com/files/apktool-install-linux-r04-brut1.tar.bz2)
-md5sums=('105c137b352aa3270b85819f863a6fa1'
-         'f7fc0f06ebee9a975e5296296a396534')
+source=(https://android-apktool.googlecode.com/files/apktool${pkgver}.tar.bz2
+        https://android-apktool.googlecode.com/files/apktool-install-linux-r04-brut1.tar.bz2)
+sha256sums=('9bae37b16f3b3f02b8c9fed9028df56429695e03330b517894d1186cdb8f8607'
+            'cffa5c0a46bab9c66da02cc5db651c3a8321bee98580815e44c802d62a696dfa')
 
 package() {
   mkdir -p "${pkgdir}"/usr/bin

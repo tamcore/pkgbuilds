@@ -9,8 +9,8 @@ arch=('i686' 'x86_64')
 license=('unknown')
 depends=('qt4' 'qtwebkit')
 source=('https://github.com/TamCore/facebook-qt/archive/master.zip' 'facebook-qt.desktop')
-md5sums=('ff2d88ac4e1bb2fabb75e6c401ab1b25'
-         'e5ad0f636267f93eadb11767fbea11c2')
+sha256sums=('7c32a3d7acb8948ff8ba7420af7bfaba1d9986b856a92f8d1cb1b1ff24dc617f'
+            '3c24838966602f04e979920aec5443d589e2265b3ec139ed654168255719ca06')
 
 build() {
   cd "${srcdir}/${pkgname}-master"

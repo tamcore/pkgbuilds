@@ -9,7 +9,7 @@ arch=(i686 x86_64)
 url="http://github.com/pfn/keepasshttp"
 _commit="3e68a4bea060682387c35c8f2c204c038874cccd"
 source=(https://github.com/pfn/keepasshttp/raw/${_commit}/KeePassHttp.plgx)
-md5sums=('75dc076571b772c4cf54bff4f56f1757')
+sha256sums=('e37e1dcb762b470fd4091c61c5db693652790549459b9a3a9b7fa1257ea69edf')
 
 package() {
     mkdir -p "${pkgdir}"/usr/share/keepass

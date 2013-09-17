@@ -13,7 +13,7 @@ makedepends=('intltool')
 options=('!libtool')
 install=${pkgname}.install
 source=("https://github.com/jasmineaura/mate-globalmenu/archive/master.zip")
-md5sums=('8b7c7f665810cdc81281213e573fac4d')
+sha256sums=('7c32a3d7acb8948ff8ba7420af7bfaba1d9986b856a92f8d1cb1b1ff24dc617f')
 
 build() {
   cd "${srcdir}"/${pkgname}-master
