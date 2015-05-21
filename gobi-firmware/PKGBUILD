@@ -1,0 +1,23 @@
+pkgname=gobi-firmware
+pkgver=1
+pkgrel=6
+pkgdesc="Firmware for gobi 2000 wwan chipset (Tested on 03f0:201d Hewlett-Packard un2400)"
+#depends=('gobi-loader')
+makedepends=('cabextract')
+noextract=('sp48568.exe')
+source=("ftp://ftp.hp.com/pub/softpaq/sp48501-49000/sp48568.exe"
+"https://github.com/jolicloud/linux-firmware/raw/master/gobi/UQCN.mbn")
+url="http://hp.com"
+options=("!strip")
+md5sums=('5e1f76c6df30f95a107f001106da49ee'
+'071329d651f4b5c2fb215ca95ae1c6a6')
+arch=('any')
+license=('custom')
+#install='INSTALL'
+
+build() {
+  cabextract sp48568.exe
+  mkdir -p ${pkgdir}/usr/lib/firmware/gobi/
+  cp Qualcomm/QCImages/Source/Packages/6/*.mbn ${pkgdir}/usr/lib/firmware/gobi/
+  cp UQCN.mbn ${pkgdir}/usr/lib/firmware/gobi/
+}
