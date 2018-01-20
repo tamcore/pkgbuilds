@@ -1,5 +1,5 @@
---- a/tp_smapi-master/Makefile	2013-05-05 14:17:13.773429897 +0200
-+++ b/tp_smapi-master/Makefile	2013-05-05 14:17:21.988216203 +0200
+--- a/tp_smapi-master/Makefile
++++ b/tp_smapi-master/Makefile
 @@ -2,7 +2,7 @@
  # This part runs as a normal, top-level Makefile:
  X:=$(shell false)

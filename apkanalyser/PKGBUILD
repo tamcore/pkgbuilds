@@ -11,14 +11,16 @@ conflicts=('apkanalyser-git')
 depends=('java-runtime')
 makedepends=('maven' 'git')
 source=('apkanalyser.sh' 'apkanalyser.desktop')
-sha256sums=('7cbfb186f8e4a1ceef555ccc8c456bef6be96a3bc4d346c2ebf76ffd41cb138f'
-            'cf2d7aca229ab85d9213340c3afbd295a2f072a58bd3a8dc2ebd5b34ce647f9c')
+
+md5sums=('8c179b61dd1c8d5417242df5d72835b3'
+         '986540ff04cfdf84ce0b30732174eabe')
 
 _gitroot=git://github.com/sonyxperiadev/ApkAnalyser.git
 _gitname=ApkAnalyser
 
 
 build() {
+  cd "$srcdir"
   msg "Connecting to GIT server...."
 
   if [[ -d "$_gitname" ]]; then
@@ -31,9 +33,9 @@ build() {
   msg "GIT checkout done or server timeout"
   msg "Starting build..."
 
-  rm -rf "${srcdir}"/$_gitname-build
-  git clone "${srcdir}"/$_gitname "${srcdir}"/$_gitname-build
-  cd "${srcdir}"/$_gitname-build
+  rm -rf "$srcdir/$_gitname-build"
+  git clone "$srcdir/$_gitname" "$srcdir/$_gitname-build"
+  cd "$srcdir/$_gitname-build"
 
   # Build smali project
   cd smali
@@ -52,10 +54,10 @@ build() {
 }
 
 package() {
-  cd "${srcdir}"/$_gitname-build
-  install -D -m644 apkanalyser/target/apkanalyser-*-exec.jar "${pkgdir}"/usr/bin/apkanalyser.jar
-  install -D -m755 "${srcdir}"/apkanalyser.sh "${pkgdir}"/usr/bin/apkanalyser
-  install -D -m644 "${srcdir}"/apkanalyser.desktop "${pkgdir}"/usr/share/applications/apkanalyser.desktop
+  cd "$srcdir/$_gitname-build"
+  install -D -m644 apkanalyser/target/apkanalyser-*-exec.jar ${pkgdir}/usr/bin/apkanalyser.jar
+  install -D -m755 ${srcdir}/apkanalyser.sh ${pkgdir}/usr/bin/apkanalyser
+  install -D -m644 ${srcdir}/apkanalyser.desktop ${pkgdir}/usr/share/applications/apkanalyser.desktop
 }
 
 # vim:set ts=2 sw=2 et:

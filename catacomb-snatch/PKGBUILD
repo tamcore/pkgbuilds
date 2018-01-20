@@ -13,17 +13,16 @@ source=(catacomb-snatch.jar::http://ci.catacombsnatch.net/job/Catacomb-Snatch/${
         catacomb-snatch.desktop
         catacomb-snatch
         LICENSE::https://raw.github.com/Maescool/Catacomb-Snatch/develop/LICENSE)
-noextract=(catacomb-snatch.jar)
-sha256sums=('45bfe06ce2ad68e73b7c391584a911ec77e3db759a8b4974327a813a083b4cfe'
-            '78473b61eabfd965c6549f5b0d6dede44d989a1f3bd356379313d3e06c49f3fe'
-            '215795fdc08e08fb944623ba8b5289cdddf1d7801da97bd6df09b976521a74bb'
-            '1d61d4297d562afa59a9e8dcb77ce4fed3638cf9b2b5d08331d1f2e28652863b'
-            '9c211b897b3bfe1f3ee9c92aa5585241c84894977986dcecf41aef4523668259')
+md5sums=('ecf29c4d44a8593b543170d21dd6ef56'
+         'a1654d780d1a5d838b30cffc41b48450'
+         '040847ddc7698129b98d302075adc8f9'
+         '9c26092103b98564f9127936faf72fdb'
+         '2abf3da47075351544e764f3b4c89317')
 
 package() {
-    install -D -m644 catacomb-snatch.png "${pkgdir}"/usr/share/icons/catacomb-snatch.png
-    install -D -m644 catacomb-snatch.jar "${pkgdir}"/usr/bin/catacomb-snatch.jar
-    install -D -m644 catacomb-snatch.desktop "${pkgdir}"/usr/share/applications/catacomb-snatch.desktop
-    install -D -m755 catacomb-snatch "${pkgdir}"/usr/bin/catacomb-snatch    
-    install -D -m644 LICENSE "${pkgdir}"/usr/share/licenses/${pkgname}/LICENSE
+    install -D -m644 catacomb-snatch.png ${pkgdir}/usr/share/icons/catacomb-snatch.png
+    install -D -m644 catacomb-snatch.jar ${pkgdir}/usr/bin/catacomb-snatch.jar
+    install -D -m644 catacomb-snatch.desktop ${pkgdir}/usr/share/applications/catacomb-snatch.desktop
+    install -D -m755 catacomb-snatch ${pkgdir}/usr/bin/catacomb-snatch    
+    install -D -m644 LICENSE ${pkgdir}/usr/share/licenses/${pkgname}/LICENSE
 }
