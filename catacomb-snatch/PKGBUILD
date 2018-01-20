@@ -13,11 +13,11 @@ source=(catacomb-snatch.jar::http://ci.catacombsnatch.net/job/Catacomb-Snatch/${
         catacomb-snatch.desktop
         catacomb-snatch
         LICENSE::https://raw.github.com/Maescool/Catacomb-Snatch/develop/LICENSE)
-md5sums=('ecf29c4d44a8593b543170d21dd6ef56'
-         '0a4a3647c4ec422a536e0867c296b42e'
-         '040847ddc7698129b98d302075adc8f9'
-         '9c26092103b98564f9127936faf72fdb'
-         '2abf3da47075351544e764f3b4c89317')
+sha256sums=('45bfe06ce2ad68e73b7c391584a911ec77e3db759a8b4974327a813a083b4cfe'
+            '7320cfa6b8471e25babe4254b5b7164805b2c31a36c6f68de55f9afab4f8c736'
+            '215795fdc08e08fb944623ba8b5289cdddf1d7801da97bd6df09b976521a74bb'
+            '1d61d4297d562afa59a9e8dcb77ce4fed3638cf9b2b5d08331d1f2e28652863b'
+            '9c211b897b3bfe1f3ee9c92aa5585241c84894977986dcecf41aef4523668259')
 
 package() {
     install -D -m644 catacomb-snatch.png ${pkgdir}/usr/share/icons/catacomb-snatch.png
