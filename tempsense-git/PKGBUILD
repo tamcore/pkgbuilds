@@ -10,7 +10,7 @@ depends=('hidapi' 'libusb-compat')
 makedepends=('git')
 provides=('tempsense')
 license=('custom')
-source=(git+https://git.tamcore.eu/philipp/tempsense.git)
+source=(git@git.pborn.eu:philipp/tempsense.git)
 sha256sums=('SKIP')
 
 build() {
